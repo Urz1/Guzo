@@ -52,7 +52,7 @@ const NarrativeBreak = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-6 font-body text-sm uppercase tracking-widest text-primary-foreground/40"
         >
-          — A traveler, after Lalibela
+          — A traveler, to Ethiopia
         </motion.p>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from "@/components/Logo";
 
 const FooterSection = () => {
   return (
@@ -7,10 +8,7 @@ const FooterSection = () => {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link to="/" className="inline-block">
-              <span className="font-display text-2xl font-bold tracking-wider text-foreground">
-                GUZO
-              </span>
-              <span className="ml-2 font-display text-lg text-gold">ጉዞ</span>
+              <Logo variant="full" className="h-9 text-foreground" />
             </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
               The definitive platform for Ethiopian tourism. Making the

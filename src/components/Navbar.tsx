@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { destinations } from "@/data/destinations";
+import Logo from "@/components/Logo";
 
 const navLinks = [
   { label: "Destinations", href: "/destinations" },
@@ -42,13 +43,8 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12 lg:px-20">
-          <Link to="/" className="flex items-center gap-3">
-            <span className="font-display text-2xl font-bold tracking-wider text-white">
-              GUZO
-            </span>
-            <span className="font-display text-lg text-gold opacity-80">
-              ጉዞ
-            </span>
+          <Link to="/" className="flex items-center">
+            <Logo variant="full" className="h-9 text-white" />
           </Link>
 
           <div className="hidden items-center gap-10 md:flex">
@@ -89,11 +85,8 @@ const Navbar = () => {
           >
             <div className="flex h-full flex-col px-8 py-8">
               <div className="flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-3">
-                  <span className="font-display text-2xl font-bold tracking-wider text-white">
-                    GUZO
-                  </span>
-                  <span className="font-display text-lg text-gold">ጉዞ</span>
+                <Link to="/" className="flex items-center">
+                  <Logo variant="full" className="h-9 text-white" />
                 </Link>
                 <button
                   onClick={() => setMobileOpen(false)}
