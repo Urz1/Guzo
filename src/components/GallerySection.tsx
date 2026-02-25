@@ -1,9 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import priestImg from "@/assets/priest-portrait.jpg";
+
+import priestImg from "@/assets/lalibela-gallery-5.jpg";
 import blueNileImg from "@/assets/blue-nile-falls.jpg";
-import gondarImg from "@/assets/gondar-castle.jpg";
-import meskelImg from "@/assets/meskel-festival.jpg";
+import gondarImg from "@/assets/gondar-gallery-1.jpg";
+import meskelImg from "@/assets/gallery-meskel.jpg";
 
 const gallery = [
   { src: priestImg, alt: "Ethiopian Orthodox priest with golden cross", caption: "Keepers of Faith", span: "row-span-2" },

@@ -1,5 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+
 import highlandsImg from "@/assets/highlands-panorama.jpg";
 
 const NarrativeBreak = () => {

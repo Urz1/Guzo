@@ -1,33 +1,68 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect, useCallback } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
-import heroImage from "@/assets/hero-lalibela.jpg";
+import { Link } from "react-router-dom";
+
+import heroLalibela from "@/assets/hero-lalibela.jpg";
+import heroHighlands from "@/assets/hero-highlands.jpg";
+import heroAxum from "@/assets/hero-axum.jpg";
+import heroHarar from "@/assets/hero-harar.jpg";
+
+const heroImages = [
+  { url: heroLalibela, alt: "Rock-hewn churches of Lalibela at golden hour" },
+  { url: heroHighlands, alt: "Dramatic peaks of the Ethiopian highlands" },
+  { url: heroAxum, alt: "Ancient obelisks of Axum" },
+  { url: heroHarar, alt: "Colorful streets of Harar's walled city" },
+];
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [currentImage, setCurrentImage] = useState(0);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 0.8]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
-  return (
-    <section ref={containerRef} className="relative h-[110vh] w-full overflow-hidden">
-      {/* Parallax Background Image */}
-      <motion.div className="absolute inset-0" style={{ scale: imageScale, y: imageY }}>
-        <img
-          src={heroImage}
-          alt="Ancient rock-hewn church of Lalibela at golden hour"
-          className="h-full w-full object-cover"
-          loading="eager"
-        />
-      </motion.div>
+  const advance = useCallback(() => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  }, []);
 
-      {/* Dynamic overlay */}
+  useEffect(() => {
+    const timer = setInterval(advance, 6000);
+    return () => clearInterval(timer);
+  }, [advance]);
+
+  return (
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden">
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          key={currentImage}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{
+            opacity: 1,
+            scale: 1.2,
+            transition: {
+              opacity: { duration: 1.5 },
+              scale: { duration: 8, ease: "linear" },
+            },
+          }}
+          exit={{ opacity: 0, transition: { duration: 1.5 } }}
+          className="absolute inset-0"
+        >
+          <img
+            src={heroImages[currentImage].url}
+            alt={heroImages[currentImage].alt}
+            className="h-full w-full object-cover"
+            loading={currentImage === 0 ? "eager" : "lazy"}
+          />
+        </motion.div>
+      </AnimatePresence>
+
       <motion.div
         className="absolute inset-0"
         style={{
@@ -43,69 +78,21 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-hero-overlay" />
 
-      {/* Floating particles / atmosphere */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute h-1 w-1 rounded-full bg-gold/20"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + i * 10}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.6, 0.2],
-            }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
+            style={{ left: `${15 + i * 15}%`, top: `${20 + i * 10}%` }}
+            animate={{ y: [0, -30, 0], opacity: [0.2, 0.6, 0.2] }}
+            transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
           />
         ))}
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-6 py-8 md:px-12 lg:px-20">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex items-center"
-        >
-          <span className="font-display text-3xl font-bold tracking-wider text-primary-foreground">
-            GUZO
-          </span>
-          <span className="ml-3 font-display text-xl text-gold opacity-80">ጉዞ</span>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="hidden items-center gap-10 md:flex"
-        >
-          {["Destinations", "Experiences", "Culture", "Plan Your Journey"].map((item, i) => (
-            <motion.a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-              className="font-body text-sm font-medium tracking-wide text-primary-foreground/70 transition-colors duration-300 hover:text-gold"
-            >
-              {item}
-            </motion.a>
-          ))}
-        </motion.div>
-      </nav>
-
-      {/* Hero Content */}
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
-        className="relative z-10 flex h-[calc(100%-100px)] flex-col items-center justify-center px-6 text-center"
+        className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-20 text-center"
       >
         <motion.div
           initial={{ width: 0 }}
@@ -113,7 +100,6 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="mb-6 h-px bg-gold"
         />
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +108,6 @@ const HeroSection = () => {
         >
           The Gateway to Ethiopia
         </motion.p>
-
         <div className="overflow-hidden">
           <motion.h1
             initial={{ y: 100 }}
@@ -143,7 +128,6 @@ const HeroSection = () => {
             Meets Eternal
           </motion.h1>
         </div>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -153,40 +137,48 @@ const HeroSection = () => {
           Discover a land of rock-hewn churches, untamed highlands, and cultures
           that have endured for three millennia.
         </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.8 }}
           className="mt-12 flex flex-col items-center gap-4 sm:flex-row"
         >
-          <a
-            href="#destinations"
+          <Link
+            to="/destinations"
             className="group inline-flex items-center gap-3 bg-gold px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest text-accent-foreground transition-all duration-300 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
           >
             Explore Destinations
-            <motion.span
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
+            <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
               →
             </motion.span>
-          </a>
-          <a
-            href="#culture"
+          </Link>
+          <Link
+            to="/wildlife"
             className="inline-flex items-center gap-3 border border-primary-foreground/20 px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest text-primary-foreground/80 transition-all duration-300 hover:border-gold hover:text-gold"
           >
-            Discover Culture
-          </a>
+            Discover Wildlife
+          </Link>
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      <div className="absolute bottom-24 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentImage(i)}
+            className={`h-0.5 transition-all duration-700 ${
+              i === currentImage ? "w-10 bg-gold" : "w-5 bg-white/25"
+            }`}
+            aria-label={`Show image ${i + 1}`}
+          />
+        ))}
+      </div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2.5 }}
-        className="absolute bottom-12 left-1/2 z-10 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import meskelImg from "@/assets/meskel-festival.jpg";
+
+import meskelImg from "@/assets/gallery-meskel.jpg";
 
 const FestivalBreak = () => {
   const containerRef = useRef<HTMLDivElement>(null);

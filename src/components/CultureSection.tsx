@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import coffeeImg from "@/assets/coffee-ceremony.jpg";
+
+import coffeeImg from "@/assets/coffee-cermony.jpg";
 
 const CultureSection = () => {
   const ref = useRef(null);

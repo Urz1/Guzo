@@ -1,39 +1,76 @@
+import { Link } from "react-router-dom";
+
 const FooterSection = () => {
   return (
     <footer className="border-t border-border bg-background px-6 py-16 md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-1">
-            <span className="font-display text-2xl font-bold tracking-wider text-foreground">
-              GUZO
-            </span>
-            <span className="ml-2 font-display text-lg text-gold">ጉዞ</span>
+            <Link to="/" className="inline-block">
+              <span className="font-display text-2xl font-bold tracking-wider text-foreground">
+                GUZO
+              </span>
+              <span className="ml-2 font-display text-lg text-gold">ጉዞ</span>
+            </Link>
             <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
               The definitive platform for Ethiopian tourism. Making the
               extraordinary accessible.
             </p>
           </div>
 
-          {[
-            {
-              title: "Discover",
-              links: ["Destinations", "Experiences", "Culture", "Festivals"],
-            },
-            {
-              title: "Plan",
-              links: ["Custom Journeys", "Group Tours", "Local Guides", "Travel Info"],
-            },
-            {
-              title: "Connect",
-              links: ["About GUZO", "For Operators", "Press", "Contact"],
-            },
-          ].map((col) => (
-            <div key={col.title}>
-              <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
-                {col.title}
-              </p>
-              <ul className="space-y-3">
-                {col.links.map((link) => (
+          <div>
+            <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
+              Discover
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "All Destinations", to: "/destinations" },
+                { label: "Wildlife", to: "/wildlife" },
+                { label: "Lalibela", to: "/destinations/lalibela" },
+                { label: "Bale Mountains", to: "/destinations/bale-mountains" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
+                    className="font-body text-sm text-muted-foreground transition-colors hover:text-gold"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
+              Heritage
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "Axum", to: "/destinations/axum" },
+                { label: "Harar", to: "/destinations/harar" },
+                { label: "Nejashi Mosque", to: "/destinations/nejashi-mosque" },
+                { label: "Aba Jifar Palace", to: "/destinations/aba-jifar-palace" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
+                    className="font-body text-sm text-muted-foreground transition-colors hover:text-gold"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
+              Connect
+            </p>
+            <ul className="space-y-3">
+              {["About GUZO", "For Operators", "Press", "Contact"].map(
+                (link) => (
                   <li key={link}>
                     <a
                       href="#"
@@ -42,18 +79,18 @@ const FooterSection = () => {
                       {link}
                     </a>
                   </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                )
+              )}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="font-body text-xs text-muted-foreground">
-            © 2026 GUZO. Crafted with reverence for Ethiopia.
+            &copy; 2026 GUZO. Crafted with reverence for Ethiopia.
           </p>
           <p className="font-body text-xs text-muted-foreground">
-            Addis Ababa · Lalibela · London · Nairobi
+            Addis Ababa &middot; Lalibela &middot; London &middot; Nairobi
           </p>
         </div>
       </div>
