@@ -47,12 +47,12 @@ const CultureSection = () => {
             <div className="mt-4 h-px w-20 bg-gold" />
             <p className="mt-8 font-body text-base leading-relaxed text-primary-foreground/70">
               Ethiopia is the only African nation never colonized. Its calendar has
-              13 months. Its churches predate most European cathedrals. Its coffee
+              13 months. Its mosques and churches are among the oldest on Earth. Its coffee
               ceremony is a meditation. Its music uses scales found nowhere else on
               Earth.
             </p>
             <p className="mt-4 font-body text-base leading-relaxed text-primary-foreground/70">
-              This is not tourism. This is pilgrimage to the source.
+              This is not tourism. This is a journey to the source.
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-6">

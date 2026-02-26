@@ -396,7 +396,7 @@ const DestinationDetail = () => {
               </p>
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Link
-                  to="/#plan"
+                  to="/contact"
                   className="group inline-flex items-center gap-3 bg-gold px-10 py-4 font-body text-sm font-semibold uppercase tracking-widest text-earth transition-all duration-300 hover:bg-gold-light hover:shadow-lg hover:shadow-gold/20"
                 >
                   Start Planning

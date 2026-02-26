@@ -86,9 +86,9 @@ const Destinations = () => {
               transition={{ delay: 0.9 }}
               className="mt-4 max-w-xl font-body text-base text-white/60 md:text-lg"
             >
-              From ancient rock-hewn churches to cloud forests teeming with
-              endemic wildlife — every corner tells a story three millennia in
-              the making.
+              From walled cities and ancient wonders to cloud forests teeming
+              with endemic wildlife — every corner tells a story three millennia
+              in the making.
             </motion.p>
           </div>
         </section>

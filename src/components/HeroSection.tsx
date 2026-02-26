@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-import heroLalibela from "@/assets/hero-lalibela.jpg";
+import heroLalibela from "@/assets/hero-lalibela.png";
 import heroHighlands from "@/assets/hero-highlands.jpg";
 import heroAxum from "@/assets/hero-axum.jpg";
 import heroHarar from "@/assets/hero-harar.jpg";
@@ -134,7 +134,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1.5 }}
           className="mt-8 max-w-xl font-body text-base leading-relaxed text-primary-foreground/60 md:text-lg"
         >
-          Discover a land of rock-hewn churches, untamed highlands, and cultures
+          Discover a land of ancient wonders, untamed highlands, and cultures
           that have endured for three millennia.
         </motion.p>
         <motion.div

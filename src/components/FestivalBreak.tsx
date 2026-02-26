@@ -1,5 +1,6 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import meskelImg from "@/assets/gallery-meskel.jpg";
 
@@ -54,18 +55,22 @@ const FestivalBreak = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-4 max-w-lg font-body text-base leading-relaxed text-primary-foreground/60"
         >
-          From the bonfires of Meskel to the dawn processions of Timkat, Ethiopian
-          festivals are not spectacles — they are invitations to belong.
+          From the bonfires of Meskel to the shores of Irrecha, from Timkat
+          processions to the joy of Eid — Ethiopian festivals are not
+          spectacles — they are invitations to belong.
         </motion.p>
-        <motion.a
-          href="#experiences"
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-8 inline-flex items-center gap-2 border-b border-gold pb-1 font-body text-sm font-medium uppercase tracking-widest text-gold transition-all hover:border-gold-light hover:text-gold-light"
         >
-          Explore Festival Calendar →
-        </motion.a>
+          <Link
+            to="/festivals"
+            className="inline-flex items-center gap-2 border-b border-gold pb-1 font-body text-sm font-medium uppercase tracking-widest text-gold transition-all hover:border-gold-light hover:text-gold-light"
+          >
+            Explore Festival Calendar →
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

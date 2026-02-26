@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mountain, Coffee, Compass, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mountain, Coffee, Compass, Users, ArrowRight } from "lucide-react";
 
 const experiences = [
   {
@@ -9,6 +10,7 @@ const experiences = [
     description:
       "Multi-day expeditions through the Simien and Bale Mountains with expert local guides. Sleep under stars at 4,000 meters.",
     duration: "3–14 days",
+    link: "/destinations/bale-mountains",
   },
   {
     icon: Coffee,
@@ -16,13 +18,15 @@ const experiences = [
     description:
       "Visit the birthplace of coffee in Kaffa. Roast beans over open flame. Learn the three-cup ceremony from the women who keep it alive.",
     duration: "Half day",
+    link: "/destinations/aba-jifar-palace",
   },
   {
     icon: Compass,
     title: "Historic Route",
     description:
-      "Lalibela, Gondar, Axum, Bahir Dar — trace the arc of Ethiopian civilization from the Queen of Sheba to the present.",
+      "Lalibela, Gondar, Axum, Harar, Nejashi — trace the arc of Ethiopian civilization across faiths, kingdoms, and millennia.",
     duration: "7–10 days",
+    link: "/destinations",
   },
   {
     icon: Users,
@@ -30,6 +34,7 @@ const experiences = [
     description:
       "Live with families in the Omo Valley, the Tigray Highlands, or the lake-shore villages of Hawassa. Real life, not performance.",
     duration: "2–5 days",
+    link: "/contact",
   },
 ];
 
@@ -67,20 +72,25 @@ const ExperiencesSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-                className="group border border-border bg-card p-8 transition-all duration-500 hover:border-gold hover:shadow-lg"
               >
-                <Icon className="mb-6 h-8 w-8 text-gold transition-transform duration-300 group-hover:scale-110" />
-                <h3 className="mb-2 font-display text-xl font-bold text-foreground">
-                  {exp.title}
-                </h3>
-                <p className="mb-6 font-body text-sm leading-relaxed text-muted-foreground">
-                  {exp.description}
-                </p>
-                <div className="flex items-center gap-2 border-t border-border pt-4">
-                  <span className="font-body text-[10px] font-semibold uppercase tracking-widest text-gold">
-                    {exp.duration}
-                  </span>
-                </div>
+                <Link
+                  to={exp.link}
+                  className="group block border border-border bg-card p-8 transition-all duration-500 hover:border-gold hover:shadow-lg"
+                >
+                  <Icon className="mb-6 h-8 w-8 text-gold transition-transform duration-300 group-hover:scale-110" />
+                  <h3 className="mb-2 font-display text-xl font-bold text-foreground">
+                    {exp.title}
+                  </h3>
+                  <p className="mb-6 font-body text-sm leading-relaxed text-muted-foreground">
+                    {exp.description}
+                  </p>
+                  <div className="flex items-center justify-between border-t border-border pt-4">
+                    <span className="font-body text-[10px] font-semibold uppercase tracking-widest text-gold">
+                      {exp.duration}
+                    </span>
+                    <ArrowRight className="h-4 w-4 text-gold/0 transition-all duration-300 group-hover:text-gold" />
+                  </div>
+                </Link>
               </motion.div>
             );
           })}

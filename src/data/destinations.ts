@@ -1,4 +1,4 @@
-import heroLalibela from "@/assets/hero-lalibela.jpg";
+import heroLalibela from "@/assets/hero-lalibela.png";
 import lalibelaGallery1 from "@/assets/lalibela-gallery-1.jpg";
 import lalibelaGallery2 from "@/assets/lalibela-gallery-2.jpg";
 import lalibelaGallery3 from "@/assets/lalibela-gallery-3.jpg";
@@ -93,7 +93,7 @@ export const destinations: Destination[] = [
       { url: lalibelaGallery5, caption: "Traditional priest in ceremonial robes" },
     ],
     description: [
-      "Eleven medieval monolithic cave churches carved from a single block of granite in the 12th century, Lalibela remains one of humanity's most extraordinary architectural achievements. King Lalibela commissioned these structures to create a 'New Jerusalem' after Muslim conquests halted Christian pilgrimages to the Holy Land.",
+      "Eleven medieval monolithic cave churches carved from a single block of granite in the 12th century, Lalibela remains one of humanity's most extraordinary architectural achievements. King Lalibela commissioned these structures to create a 'New Jerusalem' when pilgrimages to the Holy Land became impossible due to the conflicts of the era.",
       "Each church is a masterwork of engineering — carved from the top down into the earth, with intricate drainage systems, secret tunnels connecting them, and walls adorned with centuries-old frescoes. Bet Giyorgis, shaped as a perfect cruciform, is the crown jewel visible from above as a cross cut 15 meters into the rock.",
       "Today, Lalibela remains an active site of worship. White-robed pilgrims gather at dawn, their chants echoing through passages carved nearly a millennium ago. It is not a ruin — it is a living, breathing testament to faith that defies the imagination.",
     ],
@@ -135,7 +135,7 @@ export const destinations: Destination[] = [
     description: [
       "Axum was the capital of one of the great civilizations of the ancient world — the Aksumite Empire — which at its height rivaled Rome, Persia, and China. For nearly a thousand years, it controlled trade routes stretching from the Mediterranean to India, minting its own gold coins and erecting towering granite obelisks that still stand today.",
       "The city is home to the Northern Stelae Park, where massive carved monoliths — some reaching 33 meters — were raised as funeral markers for Aksumite royalty. The largest fallen stele weighs an estimated 520 tonnes, making it one of the heaviest single stones ever erected by human hands.",
-      "Axum holds a singular claim in Ethiopian identity: the Chapel of the Tablet, which by tradition houses the Ark of the Covenant brought here by Menelik I, son of King Solomon and the Queen of Sheba. Whether legend or truth, it anchors Axum as the spiritual heart of Ethiopian Christianity.",
+      "Axum holds a singular claim in Ethiopian identity: the Chapel of the Tablet, which by tradition houses the Ark of the Covenant brought here by Menelik I, son of King Solomon and the Queen of Sheba — a narrative shared across Ethiopia's Christian, Islamic, and Jewish traditions. The Aksumite Empire was also among the first states in the world to embrace both Christianity and Islam, welcoming the companions of the Prophet Muhammad during the First Hijrah in 615 AD.",
     ],
     highlights: [
       { title: "Northern Stelae Park", description: "A field of towering granite obelisks, some over 1,700 years old, carved with false doors and windows." },
@@ -149,7 +149,7 @@ export const destinations: Destination[] = [
       { label: "Best Season", value: "Oct – Mar" },
       { label: "Founded", value: "~400 BC" },
     ],
-    bestTimeToVisit: "October to March for dry weather. The Festival of Maryam Zion in late November draws massive crowds to the ancient churches.",
+    bestTimeToVisit: "October to March for dry weather. The Festival of Maryam Zion in late November and the annual Hidar Tsion celebration draw visitors to Axum's ancient sites.",
     gettingThere: "Daily flights from Addis Ababa to Axum Airport (1.5 hours). Can be combined with a northern circuit including Lalibela and Gondar.",
     whatToPack: [
       "Comfortable walking shoes for ruins exploration",

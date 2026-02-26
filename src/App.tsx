@@ -8,6 +8,9 @@ import Index from "./pages/Index";
 import Destinations from "./pages/Destinations";
 import DestinationDetail from "./pages/DestinationDetail";
 import Wildlife from "./pages/Wildlife";
+import Festivals from "./pages/Festivals";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +27,9 @@ const App = () => (
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/destinations/:slug" element={<DestinationDetail />} />
             <Route path="/wildlife" element={<Wildlife />} />
+            <Route path="/festivals" element={<Festivals />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

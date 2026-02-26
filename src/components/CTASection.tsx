@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   const ref = useRef(null);
@@ -7,7 +8,7 @@ const CTASection = () => {
 
   return (
     <section
-      id="plan-your-journey"
+      id="plan"
       className="relative overflow-hidden bg-background px-6 py-32 md:px-12 lg:px-20 lg:py-40"
     >
       {/* Decorative background elements */}
@@ -46,7 +47,10 @@ const CTASection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
-          <button className="group inline-flex items-center gap-3 bg-gold px-12 py-5 font-body text-sm font-semibold uppercase tracking-widest text-accent-foreground transition-all duration-300 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20">
+          <Link
+            to="/contact"
+            className="group inline-flex items-center gap-3 bg-gold px-12 py-5 font-body text-sm font-semibold uppercase tracking-widest text-accent-foreground transition-all duration-300 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/20"
+          >
             Start Planning
             <motion.span
               animate={{ x: [0, 5, 0] }}
@@ -54,10 +58,13 @@ const CTASection = () => {
             >
               →
             </motion.span>
-          </button>
-          <button className="inline-flex items-center gap-2 border border-border px-12 py-5 font-body text-sm font-semibold uppercase tracking-widest text-foreground transition-all duration-300 hover:border-gold hover:text-gold">
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 border border-border px-12 py-5 font-body text-sm font-semibold uppercase tracking-widest text-foreground transition-all duration-300 hover:border-gold hover:text-gold"
+          >
             Speak to a Guide
-          </button>
+          </Link>
         </motion.div>
 
         <p className="mt-10 font-body text-xs text-muted-foreground">

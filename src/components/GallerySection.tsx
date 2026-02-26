@@ -1,16 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-import priestImg from "@/assets/lalibela-gallery-5.jpg";
+import hararImg from "@/assets/hero-harar.jpg";
 import blueNileImg from "@/assets/blue-nile-falls.jpg";
 import gondarImg from "@/assets/gondar-gallery-1.jpg";
-import meskelImg from "@/assets/gallery-meskel.jpg";
+import nejashiImg from "@/assets/nejashi-hero.jpg";
 
 const gallery = [
-  { src: priestImg, alt: "Ethiopian Orthodox priest with golden cross", caption: "Keepers of Faith", span: "row-span-2" },
+  { src: hararImg, alt: "Colorful streets of Harar's walled city", caption: "Harar — City of Peace", span: "row-span-2" },
   { src: blueNileImg, alt: "Blue Nile Falls", caption: "Tis Abay — The Smoking Water", span: "" },
   { src: gondarImg, alt: "Gondar Castle at sunset", caption: "The Camelot of Africa", span: "" },
-  { src: meskelImg, alt: "Meskel Festival bonfire", caption: "Meskel — Finding of the True Cross", span: "col-span-2" },
+  { src: nejashiImg, alt: "Nejashi Mosque in the Tigray mountains", caption: "Nejashi — Where Islam Found Refuge", span: "col-span-2" },
 ];
 
 const GallerySection = () => {

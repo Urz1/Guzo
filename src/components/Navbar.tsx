@@ -8,8 +8,9 @@ import Logo from "@/components/Logo";
 const navLinks = [
   { label: "Destinations", href: "/destinations" },
   { label: "Wildlife", href: "/wildlife" },
-  { label: "Experiences", href: "/#experiences" },
-  { label: "Plan Your Journey", href: "/#plan" },
+  { label: "Festivals", href: "/festivals" },
+  { label: "About", href: "/about" },
+  { label: "Plan Your Journey", href: "/contact" },
 ];
 
 const Navbar = () => {

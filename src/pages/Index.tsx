@@ -6,6 +6,7 @@ import StatsBanner from "@/components/StatsBanner";
 import ExperiencesSection from "@/components/ExperiencesSection";
 import HeritageHighlights from "@/components/HeritageHighlights";
 import FestivalBreak from "@/components/FestivalBreak";
+import FestivalsSection from "@/components/FestivalsSection";
 import WildlifeTeaser from "@/components/WildlifeTeaser";
 import GallerySection from "@/components/GallerySection";
 import CultureSection from "@/components/CultureSection";
@@ -26,6 +27,7 @@ const Index = () => {
         <HeritageHighlights />
         <ExperiencesSection />
         <FestivalBreak />
+        <FestivalsSection />
         <WildlifeTeaser />
         <GallerySection />
         <CultureSection />

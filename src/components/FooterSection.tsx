@@ -67,18 +67,21 @@ const FooterSection = () => {
               Connect
             </p>
             <ul className="space-y-3">
-              {["About GUZO", "For Operators", "Press", "Contact"].map(
-                (link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="font-body text-sm text-muted-foreground transition-colors hover:text-gold"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { label: "About GUZO", to: "/about" },
+                { label: "Festivals", to: "/festivals" },
+                { label: "Plan Your Journey", to: "/contact" },
+                { label: "Contact", to: "/contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
+                    className="font-body text-sm text-muted-foreground transition-colors hover:text-gold"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
