@@ -87,7 +87,7 @@ const Destinations = () => {
               className="mt-4 max-w-xl font-body text-base text-white/60 md:text-lg"
             >
               From walled cities and ancient wonders to cloud forests teeming
-              with endemic wildlife — every corner tells a story three millennia
+              with endemic wildlife   every corner tells a story three millennia
               in the making.
             </motion.p>
           </div>

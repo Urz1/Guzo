@@ -80,7 +80,7 @@ const Logo = ({ variant = "full", className = "" }: LogoProps) => {
         ጉ
       </text>
 
-      {/* Gold accent connector — thin line bridging the two scripts */}
+      {/* Gold accent connector   thin line bridging the two scripts */}
       <rect x="0" y="39" width="52" height="1" rx="0.5" fill={GOLD} opacity="0.5" />
       <rect x="148" y="39" width="32" height="1" rx="0.5" fill={GOLD} opacity="0.3" />
 

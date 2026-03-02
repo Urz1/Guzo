@@ -52,7 +52,7 @@ const FestivalsSection = () => {
             <span className="italic">soul on fire</span>
           </h2>
           <p className="mt-4 max-w-xl font-body text-base leading-relaxed text-muted-foreground">
-            Ethiopia celebrates across faiths and traditions — from Oromo
+            Ethiopia celebrates across faiths and traditions   from Oromo
             thanksgiving at sacred lakes to Sufi chanting in ancient walled
             cities. Plan your journey around these extraordinary moments.
           </p>
@@ -173,7 +173,7 @@ const FestivalsSection = () => {
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
                         >
-                          <p className="mb-4 font-body text-sm leading-relaxed text-muted-foreground">
+                          <p className="mb-4 font-body text-base leading-relaxed text-muted-foreground">
                             {festival.description}
                           </p>
 
@@ -208,7 +208,7 @@ const FestivalsSection = () => {
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.2 }}
                         >
-                          <p className="line-clamp-2 font-body text-sm leading-relaxed text-muted-foreground">
+                          <p className="line-clamp-2 font-body text-base leading-relaxed text-muted-foreground">
                             {festival.description}
                           </p>
                           <span className="mt-3 flex items-center gap-1 font-body text-xs font-semibold uppercase tracking-widest text-gold transition-colors group-hover:text-gold-light">

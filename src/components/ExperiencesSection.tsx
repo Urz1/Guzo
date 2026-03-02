@@ -24,7 +24,7 @@ const experiences = [
     icon: Compass,
     title: "Historic Route",
     description:
-      "Lalibela, Gondar, Axum, Harar, Nejashi — trace the arc of Ethiopian civilization across faiths, kingdoms, and millennia.",
+      "Lalibela, Gondar, Axum, Harar, Nejashi   trace the arc of Ethiopian civilization across faiths, kingdoms, and millennia.",
     duration: "7–10 days",
     link: "/destinations",
   },
@@ -81,7 +81,7 @@ const ExperiencesSection = () => {
                   <h3 className="mb-2 font-display text-xl font-bold text-foreground">
                     {exp.title}
                   </h3>
-                  <p className="mb-6 font-body text-sm leading-relaxed text-muted-foreground">
+                  <p className="mb-6 font-body text-base leading-relaxed text-muted-foreground">
                     {exp.description}
                   </p>
                   <div className="flex items-center justify-between border-t border-border pt-4">

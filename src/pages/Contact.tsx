@@ -224,7 +224,7 @@ const Contact = () => {
                     For Operators
                   </p>
                   <p className="font-body text-sm text-muted-foreground">
-                    Tour operators and travel agents — reach out at{" "}
+                    Tour operators and travel agents   reach out at{" "}
                     <span className="text-gold">
                       partners@guzoethiopia.com
                     </span>{" "}
@@ -344,7 +344,7 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     rows={5}
-                    placeholder="Tell us about your dream Ethiopian journey — what excites you, what you'd love to see, any questions..."
+                    placeholder="Tell us about your dream Ethiopian journey   what excites you, what you'd love to see, any questions..."
                     className="w-full resize-none border border-border bg-card px-4 py-3 font-body text-sm text-foreground placeholder:text-muted-foreground/50 transition-colors focus:border-gold focus:outline-none"
                   />
                 </div>

@@ -267,7 +267,7 @@ const Wildlife = () => {
                     <p className="mt-0.5 font-body text-xs italic text-muted-foreground">
                       {species.scientificName}
                     </p>
-                    <p className="mt-3 line-clamp-3 font-body text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-3 line-clamp-3 font-body text-base leading-relaxed text-muted-foreground">
                       {species.description}
                     </p>
                     <p className="mt-3 flex items-center gap-1.5 font-body text-xs text-gold/70">

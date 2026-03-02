@@ -271,7 +271,7 @@ const DestinationDetail = () => {
                     <h3 className="mb-3 font-display text-xl font-bold text-foreground">
                       {highlight.title}
                     </h3>
-                    <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                    <p className="font-body text-base leading-relaxed text-muted-foreground">
                       {highlight.description}
                     </p>
                   </div>
@@ -302,7 +302,7 @@ const DestinationDetail = () => {
                       Best Time to Visit
                     </h3>
                   </div>
-                  <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                  <p className="font-body text-base leading-relaxed text-muted-foreground">
                     {destination.bestTimeToVisit}
                   </p>
                 </div>
@@ -316,7 +316,7 @@ const DestinationDetail = () => {
                       Getting There
                     </h3>
                   </div>
-                  <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                  <p className="font-body text-base leading-relaxed text-muted-foreground">
                     {destination.gettingThere}
                   </p>
                 </div>
@@ -334,7 +334,7 @@ const DestinationDetail = () => {
                     {destination.whatToPack.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 font-body text-sm text-muted-foreground"
+                        className="flex items-start gap-2 font-body text-base text-muted-foreground"
                       >
                         <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gold/60" />
                         {item}
@@ -391,7 +391,7 @@ const DestinationDetail = () => {
               </h2>
               <p className="mb-10 font-body text-base text-white/60">
                 Let us craft a personalized itinerary that brings{" "}
-                {destination.name}'s wonders to life — at your pace, in your
+                {destination.name}'s wonders to life   at your pace, in your
                 style.
               </p>
               <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

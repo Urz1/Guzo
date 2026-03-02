@@ -56,8 +56,8 @@ const FestivalBreak = () => {
           className="mt-4 max-w-lg font-body text-base leading-relaxed text-primary-foreground/60"
         >
           From the bonfires of Meskel to the shores of Irrecha, from Timkat
-          processions to the joy of Eid — Ethiopian festivals are not
-          spectacles — they are invitations to belong.
+          processions to the joy of Eid   Ethiopian festivals are not
+          spectacles   they are invitations to belong.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

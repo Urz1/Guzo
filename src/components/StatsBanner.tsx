@@ -6,7 +6,7 @@ const stats = [
   { value: "9", label: "UNESCO World Heritage Sites", suffix: "" },
   { value: "80+", label: "Languages Spoken", suffix: "" },
   { value: "13", label: "Months of Sunshine", suffix: "" },
-  { value: "4,550", label: "Meters — Highest Peak", suffix: "m" },
+  { value: "4,550", label: "Meters   Highest Peak", suffix: "m" },
   { value: "∞", label: "Reasons to Return", suffix: "" },
 ];
 

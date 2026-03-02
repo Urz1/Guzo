@@ -74,7 +74,7 @@ const Festivals = () => {
               className="mt-4 max-w-xl font-body text-base text-white/60 md:text-lg"
             >
               From Oromo thanksgiving at sacred lakes to Sufi chanting in
-              ancient walled cities — plan your journey around these
+              ancient walled cities   plan your journey around these
               extraordinary moments.
             </motion.p>
 
@@ -207,7 +207,7 @@ const Festivals = () => {
                             </span>
                           </div>
 
-                          <p className="mt-4 line-clamp-2 font-body text-sm leading-relaxed text-muted-foreground">
+                          <p className="mt-4 line-clamp-2 font-body text-base leading-relaxed text-muted-foreground">
                             {festival.description}
                           </p>
                         </div>
@@ -229,7 +229,7 @@ const Festivals = () => {
                                   <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold">
                                     About This Festival
                                   </p>
-                                  <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                                  <p className="font-body text-base leading-relaxed text-muted-foreground">
                                     {festival.description}
                                   </p>
                                 </div>

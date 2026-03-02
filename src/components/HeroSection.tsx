@@ -1,12 +1,12 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 
 import heroLalibela from "@/assets/hero-lalibela.png";
 import heroHighlands from "@/assets/hero-highlands.jpg";
 import heroAxum from "@/assets/hero-axum.jpg";
 import heroHarar from "@/assets/hero-harar.jpg";
+import heroVideo from "@/assets/GUZO (1).mp4";
 
 const heroImages = [
   { url: heroLalibela, alt: "Rock-hewn churches of Lalibela at golden hour" },
@@ -17,7 +17,10 @@ const heroImages = [
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [currentImage, setCurrentImage] = useState(0);
+  const [videoReady, setVideoReady] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -33,36 +36,78 @@ const HeroSection = () => {
   }, []);
 
   useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  useEffect(() => {
+    if (videoReady) return;
     const timer = setInterval(advance, 6000);
     return () => clearInterval(timer);
-  }, [advance]);
+  }, [advance, videoReady]);
+
+  const handleVideoCanPlay = () => {
+    setVideoReady(true);
+    videoRef.current?.play().catch(() => {});
+  };
+
+  const showVideo = isDesktop && videoReady;
 
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden">
+      {/* Image slideshow   visible on mobile always, on desktop until video loads */}
       <AnimatePresence mode="popLayout">
-        <motion.div
-          key={currentImage}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{
-            opacity: 1,
-            scale: 1.2,
-            transition: {
-              opacity: { duration: 1.5 },
-              scale: { duration: 8, ease: "linear" },
-            },
-          }}
-          exit={{ opacity: 0, transition: { duration: 1.5 } }}
-          className="absolute inset-0"
-        >
-          <img
-            src={heroImages[currentImage].url}
-            alt={heroImages[currentImage].alt}
-            className="h-full w-full object-cover"
-            loading={currentImage === 0 ? "eager" : "lazy"}
-          />
-        </motion.div>
+        {!showVideo && (
+          <motion.div
+            key={currentImage}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{
+              opacity: 1,
+              scale: 1.2,
+              transition: {
+                opacity: { duration: 1.5 },
+                scale: { duration: 8, ease: "linear" },
+              },
+            }}
+            exit={{ opacity: 0, transition: { duration: 1.5 } }}
+            className="absolute inset-0"
+          >
+            <img
+              src={heroImages[currentImage].url}
+              alt={heroImages[currentImage].alt}
+              className="h-full w-full object-cover"
+              loading={currentImage === 0 ? "eager" : "lazy"}
+            />
+          </motion.div>
+        )}
       </AnimatePresence>
 
+      {/* Video background   desktop only, loads lazily */}
+      {isDesktop && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: videoReady ? 1 : 0 }}
+          transition={{ duration: 2 }}
+          className="absolute inset-0"
+        >
+          <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="auto"
+            onCanPlayThrough={handleVideoCanPlay}
+            className="h-full w-full object-cover"
+            poster={heroImages[0].url}
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        </motion.div>
+      )}
+
+      {/* Gradient overlay */}
       <motion.div
         className="absolute inset-0"
         style={{
@@ -78,6 +123,7 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-hero-overlay" />
 
+      {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -90,6 +136,7 @@ const HeroSection = () => {
         ))}
       </div>
 
+      {/* Text content */}
       <motion.div
         style={{ y: textY, opacity: textOpacity }}
         className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-20 text-center"
@@ -161,19 +208,23 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      <div className="absolute bottom-24 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-        {heroImages.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentImage(i)}
-            className={`h-0.5 transition-all duration-700 ${
-              i === currentImage ? "w-10 bg-gold" : "w-5 bg-white/25"
-            }`}
-            aria-label={`Show image ${i + 1}`}
-          />
-        ))}
-      </div>
+      {/* Image indicators   only when showing slideshow */}
+      {!showVideo && (
+        <div className="absolute bottom-24 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+          {heroImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentImage(i)}
+              className={`h-0.5 transition-all duration-700 ${
+                i === currentImage ? "w-10 bg-gold" : "w-5 bg-white/25"
+              }`}
+              aria-label={`Show image ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
 
+      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

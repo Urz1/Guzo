@@ -4,7 +4,7 @@ import NarrativeBreak from "@/components/NarrativeBreak";
 import DestinationsSection from "@/components/DestinationsSection";
 import StatsBanner from "@/components/StatsBanner";
 import ExperiencesSection from "@/components/ExperiencesSection";
-import HeritageHighlights from "@/components/HeritageHighlights";
+
 import FestivalBreak from "@/components/FestivalBreak";
 import FestivalsSection from "@/components/FestivalsSection";
 import WildlifeTeaser from "@/components/WildlifeTeaser";
@@ -24,7 +24,6 @@ const Index = () => {
         <NarrativeBreak />
         <DestinationsSection />
         <StatsBanner />
-        <HeritageHighlights />
         <ExperiencesSection />
         <FestivalBreak />
         <FestivalsSection />

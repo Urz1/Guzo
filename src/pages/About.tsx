@@ -16,13 +16,13 @@ const values = [
     icon: Heart,
     title: "Reverence, Not Exploitation",
     description:
-      "Every itinerary is built on respect — for the land, its people, and their traditions. We don't sell culture as a commodity. We facilitate genuine encounters.",
+      "Every itinerary is built on respect   for the land, its people, and their traditions. We don't sell culture as a commodity. We facilitate genuine encounters.",
   },
   {
     icon: Globe,
     title: "All of Ethiopia",
     description:
-      "Ethiopia belongs to all its peoples — Orthodox, Muslim, traditional, and beyond. We showcase the full mosaic, not a single thread. No heritage is more or less worthy of celebration.",
+      "Ethiopia belongs to all its peoples   Orthodox, Muslim, traditional, and beyond. We showcase the full mosaic, not a single thread. No heritage is more or less worthy of celebration.",
   },
   {
     icon: Users,
@@ -135,13 +135,13 @@ const About = () => {
                   GUZO was born from a simple frustration: the world's oldest
                   independent nation, home to 3,000 years of unbroken
                   civilization, 80+ languages, and landscapes that range from
-                  the hottest place on Earth to glacial peaks — was being
+                  the hottest place on Earth to glacial peaks   was being
                   represented by generic tour packages and stock photos.
                 </p>
                 <p className="font-body text-base leading-relaxed text-muted-foreground md:text-lg">
-                  We set out to change that. GUZO (ጉዞ — "journey" in Amharic)
+                  We set out to change that. GUZO (ጉዞ   "journey" in Amharic)
                   is a platform built by Ethiopians, for the world, to showcase
-                  every dimension of this extraordinary country — its Orthodox
+                  every dimension of this extraordinary country   its Orthodox
                   churches and Islamic mosques, its Oromo traditions and Sidama
                   festivals, its wolves and its coffee, its mountains and its
                   markets.
@@ -178,7 +178,7 @@ const About = () => {
                       <h3 className="mb-3 font-display text-xl font-bold text-foreground">
                         {value.title}
                       </h3>
-                      <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                      <p className="font-body text-base leading-relaxed text-muted-foreground">
                         {value.description}
                       </p>
                     </div>
@@ -230,7 +230,7 @@ const About = () => {
                     <p className="mt-1 font-body text-xs font-semibold uppercase tracking-wider text-gold">
                       {member.role}
                     </p>
-                    <p className="mt-4 font-body text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-4 font-body text-base leading-relaxed text-muted-foreground">
                       {member.bio}
                     </p>
                   </div>

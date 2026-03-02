@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
     quote:
-      "The Simien Mountains made the Alps feel like a rehearsal. Standing at the edge of a 1,500-meter drop with gelada baboons at my feet — that's the moment travel becomes something else entirely.",
+      "The Simien Mountains made the Alps feel like a rehearsal. Standing at the edge of a 1,500-meter drop with gelada baboons at my feet   that's the moment travel becomes something else entirely.",
     author: "Marcus Lindström",
     location: "Stockholm → Simien Mountains",
     rating: 5,

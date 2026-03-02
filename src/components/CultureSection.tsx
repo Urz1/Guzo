@@ -25,7 +25,7 @@ const CultureSection = () => {
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/50 to-transparent p-8">
               <p className="font-display text-sm italic text-primary-foreground/60">
-                The coffee ceremony — three cups, three blessings
+                The coffee ceremony   three cups, three blessings
               </p>
             </div>
           </motion.div>

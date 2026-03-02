@@ -7,10 +7,10 @@ import gondarImg from "@/assets/gondar-gallery-1.jpg";
 import nejashiImg from "@/assets/nejashi-hero.jpg";
 
 const gallery = [
-  { src: hararImg, alt: "Colorful streets of Harar's walled city", caption: "Harar — City of Peace", span: "row-span-2" },
-  { src: blueNileImg, alt: "Blue Nile Falls", caption: "Tis Abay — The Smoking Water", span: "" },
+  { src: hararImg, alt: "Colorful streets of Harar's walled city", caption: "Harar   City of Peace", span: "row-span-2" },
+  { src: blueNileImg, alt: "Blue Nile Falls", caption: "Tis Abay   The Smoking Water", span: "" },
   { src: gondarImg, alt: "Gondar Castle at sunset", caption: "The Camelot of Africa", span: "" },
-  { src: nejashiImg, alt: "Nejashi Mosque in the Tigray mountains", caption: "Nejashi — Where Islam Found Refuge", span: "col-span-2" },
+  { src: nejashiImg, alt: "Nejashi Mosque in the Tigray mountains", caption: "Nejashi   Where Islam Found Refuge", span: "col-span-2" },
 ];
 
 const GallerySection = () => {

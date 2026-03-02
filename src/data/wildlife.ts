@@ -117,7 +117,7 @@ export const wildlife: WildlifeSpecies[] = [
     category: "mammal",
     conservationStatus: "near-threatened",
     description:
-      "A dark, strikingly beautiful subspecies of bushbuck found only in the Ethiopian highlands, Menelik's Bushbuck is the darkest of all bushbucks — males are nearly black with faint white markings. They inhabit the dense juniper and Hagenia forests of the Bale Mountains, emerging at dawn and dusk to browse on forest edges.",
+      "A dark, strikingly beautiful subspecies of bushbuck found only in the Ethiopian highlands, Menelik's Bushbuck is the darkest of all bushbucks   males are nearly black with faint white markings. They inhabit the dense juniper and Hagenia forests of the Bale Mountains, emerging at dawn and dusk to browse on forest edges.",
     location: "Bale Mountains, Arsi Highlands",
   },
   {
