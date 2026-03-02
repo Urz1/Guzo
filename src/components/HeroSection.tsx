@@ -6,7 +6,8 @@ import heroLalibela from "@/assets/hero-lalibela.png";
 import heroHighlands from "@/assets/hero-highlands.jpg";
 import heroAxum from "@/assets/hero-axum.jpg";
 import heroHarar from "@/assets/hero-harar.jpg";
-import heroVideo from "@/assets/GUZO (1).mp4";
+
+const heroVideoUrl = "/video/hero.mp4";
 
 const heroImages = [
   { url: heroLalibela, alt: "Rock-hewn churches of Lalibela at golden hour" },
@@ -102,7 +103,7 @@ const HeroSection = () => {
             className="h-full w-full object-cover"
             poster={heroImages[0].url}
           >
-            <source src={heroVideo} type="video/mp4" />
+            <source src={heroVideoUrl} type="video/mp4" />
           </video>
         </motion.div>
       )}
